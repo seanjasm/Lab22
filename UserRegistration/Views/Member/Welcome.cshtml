@@ -1,0 +1,41 @@
+﻿@model SummaryView
+
+@{
+    ViewBag.Title = "Welcome " + ViewBag.Fn;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome, @Html.DisplayFor(model => model.FirstName)!</h2>
+
+@using (Html.BeginForm("Welcome", "Member", FormMethod.Get))
+{
+    <div>
+        <hr />
+        <ul>
+            <li>
+                @Html.Label("First Name: ")
+                @Html.DisplayFor(model => model.FirstName)
+            </li>
+            <li>
+                @Html.Label("Last Name: ")
+                @Html.DisplayFor(model => model.LastName)
+            </li>
+            <li>
+                @Html.Label("Gender: ")
+                @Html.DisplayFor(model => model.Sex)
+            </li>
+            <li>
+                @Html.Label("Date of Birth: ")
+                @Html.DisplayFor(model => model.Dob)
+            </li>
+            <li>
+                @Html.Label("User Name: ")
+                @Html.DisplayFor(model => model.UserName)
+            </li>
+            <li>
+                @Html.Label("Email: ")
+                @Html.DisplayFor(model => model.Email)
+            </li>
+        </ul>
+    </div>
+}
